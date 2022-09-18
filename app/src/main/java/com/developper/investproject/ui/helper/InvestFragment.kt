@@ -13,9 +13,13 @@ import com.developper.investproject.R
 import com.developper.investproject.databinding.FragmentInvestBinding
 import com.developper.investproject.room_Model.Note
 import com.example.room.NoteDataBase
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+
+private val TextInputLayout.text: Any
+    get() = Unit
 
 class InvestFragment : Fragment() {
 
@@ -39,21 +43,22 @@ class InvestFragment : Fragment() {
                 Note(
                     0,
                     binding.edSumma.text.toString().toInt(),
-                    binding.idTg.text.toString(),
-                    binding.edClock.text.toString()
+                    binding.edTelegram.text.toString(),
+                    binding.edTime.text.toString()
                 )
             GlobalScope.launch(Dispatchers.IO) {
                 NoteDataBase.DatabaseBuilder.getDatabase(requireContext()).noteDao()
                     .insertNote(note)
 
             }
-            Toast.makeText(context, "Успесно приняли сумма $", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_investFragment_to_publishedFragment)
         }
 
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
+
+        val summa = binding.edSumma.toString()
 
 
     }

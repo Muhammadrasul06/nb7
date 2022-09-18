@@ -90,9 +90,6 @@
         <action
             android:id="@+id/action_trade1Fragment_to_destination_exchange"
             app:destination="@id/destination_exchange" />
-        <action
-            android:id="@+id/action_trade1Fragment_to_profileHelpFragment"
-            app:destination="@id/profileHelpFragment" />
     </fragment>
     <fragment
         android:id="@+id/trade2Fragment"
@@ -105,9 +102,6 @@
         <action
             android:id="@+id/action_trade2Fragment_to_destination_exchange"
             app:destination="@id/destination_exchange" />
-        <action
-            android:id="@+id/action_trade2Fragment_to_profileHelpFragment"
-            app:destination="@id/profileHelpFragment" />
     </fragment>
     <fragment
         android:id="@+id/investFragment"
@@ -120,9 +114,6 @@
         <action
             android:id="@+id/action_investFragment_to_destination_exchange"
             app:destination="@id/destination_exchange" />
-        <action
-            android:id="@+id/action_investFragment_to_profileHelpFragment"
-            app:destination="@id/profileHelpFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileHelpFragment"

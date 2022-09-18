@@ -8,6 +8,10 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.developper.investproject.R
 import com.developper.investproject.databinding.FragmentTrade1Binding
+import com.developper.investproject.room_Model.Note
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class Trade1Fragment : Fragment() {
 
@@ -16,7 +20,7 @@ class Trade1Fragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding= FragmentTrade1Binding.inflate(layoutInflater)
         return binding.root
@@ -25,8 +29,25 @@ class Trade1Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnNext.setOnClickListener {
+
+            val note =
+                Note(
+                    0,
+                    binding.edSumma.text.toString().toInt(),
+                    binding.edTelegram.text.toString(),
+                    binding.edTime.text.toString()
+                )
+            GlobalScope.launch(Dispatchers.IO) {
+                NoteDatabaseTrade.DatabaseBuilderTrade.getDatabaseTrade(requireContext()).noteDoa_trade()
+                    .insertNote_trade(note)
+
+            }
+            findNavController().navigate(R.id.action_investFragment_to_publishedFragment)
+        }
+
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.action_trade1Fragment_to_destination_exchange)
+            findNavController().popBackStack()
         }
     }
 }

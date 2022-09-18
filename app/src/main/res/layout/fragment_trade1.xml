@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@id/edSumma" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/id_tg"
+        android:id="@+id/edTelegram"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@id/edSumma" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edClock"
+        android:id="@+id/edTime"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -94,9 +94,10 @@
         android:paddingEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_tg" />
+        app:layout_constraintTop_toBottomOf="@id/edTelegram" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNext"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
@@ -110,6 +111,6 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edClock" />
+        app:layout_constraintTop_toBottomOf="@id/edTime" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

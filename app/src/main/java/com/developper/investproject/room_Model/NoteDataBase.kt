@@ -9,6 +9,7 @@ import com.developper.investproject.room_Model.Note
 @Database(entities = [Note::class], version = 1)
 abstract class NoteDataBase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
+//    abstract fun noteDao_trade():NoteDao_trade
 
     object DatabaseBuilder {
         private var INSTANCE: NoteDataBase? = null

@@ -33,6 +33,10 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
         adapter = Rec_Adapter()
 
         adapter.onItemClickListener(object : Rec_Adapter.OnItemClickListener {
@@ -53,6 +57,7 @@ class HistoryFragment : Fragment() {
             binding.recyclerview.adapter = adapter
 
         }
+
     }
     fun setList() {
         val notes =
@@ -62,10 +67,6 @@ class HistoryFragment : Fragment() {
 
     fun deleteNote(note: Note) {
         NoteDataBase.DatabaseBuilder.getDatabase(requireContext()).noteDao().deleteNote(note)
-
-
-        binding.btnBack.setOnClickListener {
-         findNavController().popBackStack()
-        }
     }
+
 }
