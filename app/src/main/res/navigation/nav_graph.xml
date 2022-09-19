@@ -21,11 +21,6 @@
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
     <fragment
-        android:id="@+id/invetmentFragment"
-        android:name="com.developper.investproject.ui.investment.InvetmentFragment"
-        android:label="fragment_invetment"
-        tools:layout="@layout/fragment_invetment"/>
-    <fragment
         android:id="@+id/destination_home"
         android:name="com.developper.investproject.ui.Home.HomeFragment"
         android:label="fragment_home"
@@ -78,18 +73,22 @@
         android:id="@+id/publishedFragment"
         android:name="com.developper.investproject.ui.PublishedFragment"
         android:label="fragment_published"
-        tools:layout="@layout/fragment_published" />
+        tools:layout="@layout/fragment_published" >
+        <action
+            android:id="@+id/action_publishedFragment_to_destination_exchange"
+            app:destination="@id/destination_exchange" />
+    </dialog>
     <fragment
         android:id="@+id/trade1Fragment"
         android:name="com.developper.investproject.ui.helper.Trade1Fragment"
         android:label="fragment_trade1"
         tools:layout="@layout/fragment_trade1" >
         <action
-            android:id="@+id/action_trade1Fragment_to_publishedFragment"
-            app:destination="@id/publishedFragment" />
-        <action
             android:id="@+id/action_trade1Fragment_to_destination_exchange"
             app:destination="@id/destination_exchange" />
+        <action
+            android:id="@+id/action_trade1Fragment_to_paymentsFragment"
+            app:destination="@id/paymentsFragment" />
     </fragment>
     <fragment
         android:id="@+id/trade2Fragment"
@@ -97,11 +96,11 @@
         android:label="fragment_trade2"
         tools:layout="@layout/fragment_trade2" >
         <action
-            android:id="@+id/action_trade2Fragment_to_publishedFragment"
-            app:destination="@id/publishedFragment" />
-        <action
             android:id="@+id/action_trade2Fragment_to_destination_exchange"
             app:destination="@id/destination_exchange" />
+        <action
+            android:id="@+id/action_trade2Fragment_to_paymentsFragment"
+            app:destination="@id/paymentsFragment" />
     </fragment>
     <fragment
         android:id="@+id/investFragment"
@@ -109,11 +108,8 @@
         android:label="fragment_invest"
         tools:layout="@layout/fragment_invest" >
         <action
-            android:id="@+id/action_investFragment_to_publishedFragment"
-            app:destination="@id/publishedFragment" />
-        <action
-            android:id="@+id/action_investFragment_to_destination_exchange"
-            app:destination="@id/destination_exchange" />
+            android:id="@+id/action_investFragment_to_unPublishedFragment"
+            app:destination="@id/unPublishedFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileHelpFragment"
@@ -125,4 +121,22 @@
         android:name="com.developper.investproject.SignInActivity"
         android:label="activity_sign_in"
         tools:layout="@layout/activity_sign_in" />
+    <dialog
+        android:id="@+id/unPublishedFragment"
+        android:name="com.developper.investproject.ui.UnPublishedFragment"
+        android:label="fragment_un_published"
+        tools:layout="@layout/fragment_un_published" >
+        <action
+            android:id="@+id/action_unPublishedFragment_to_destination_exchange"
+            app:destination="@id/destination_exchange" />
+    </dialog>
+    <fragment
+        android:id="@+id/paymentsFragment"
+        android:name="com.developper.investproject.ui.PaymentsFragment"
+        android:label="fragment_payments"
+        tools:layout="@layout/fragment_payments" >
+        <action
+            android:id="@+id/action_paymentsFragment_to_publishedFragment"
+            app:destination="@id/publishedFragment" />
+    </fragment>
 </navigation>

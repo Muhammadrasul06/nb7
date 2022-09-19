@@ -18,9 +18,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-private val TextInputLayout.text: Any
-    get() = Unit
-
 class InvestFragment : Fragment() {
 
     lateinit var binding: FragmentInvestBinding
@@ -38,28 +35,24 @@ class InvestFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnNext.setOnClickListener {
-
-            val note =
-                Note(
-                    0,
-                    binding.edSumma.text.toString().toInt(),
-                    binding.edTelegram.text.toString(),
-                    binding.edTime.text.toString()
-                )
-            GlobalScope.launch(Dispatchers.IO) {
-                NoteDataBase.DatabaseBuilder.getDatabase(requireContext()).noteDao()
-                    .insertNote(note)
-
-            }
-            findNavController().navigate(R.id.action_investFragment_to_publishedFragment)
+            findNavController().navigate(R.id.action_investFragment_to_unPublishedFragment)
         }
 
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
-
-        val summa = binding.edSumma.toString()
-
-
     }
 }
+
+//val note =
+////                Note(
+////                    0,
+////                    binding.edSumma.text.toString().toInt(),
+////                    binding.edTelegram.text.toString(),
+////                    binding.edTime.text.toString()
+////                )
+////            GlobalScope.launch(Dispatchers.IO) {
+////                NoteDataBase.DatabaseBuilder.getDatabase(requireContext()).noteDao()
+////                    .insertNote(note)
+////
+////            }

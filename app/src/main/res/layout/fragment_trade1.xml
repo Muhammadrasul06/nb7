@@ -41,20 +41,34 @@
         app:layout_constraintTop_toBottomOf="@id/title" />
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edPercent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="10dp"
+        android:hint="Введите процент"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/text_input_layout"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_title" />
+
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edSumma"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/rentangle"
+        android:background="@drawable/text_input_layout"
         android:hint="Введите сумму"
         android:inputType="number"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_title" />
+        app:layout_constraintTop_toBottomOf="@id/edPercent" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -71,7 +85,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/rentangle"
+        android:background="@drawable/text_input_layout"
         android:hint="Введите телеграм Id "
         android:inputType="number"
         android:paddingStart="10dp"
@@ -85,10 +99,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/rentangle"
-        android:hint="Введите времю( число/час/минут )"
+        android:background="@drawable/text_input_layout"
+        android:hint="Введите время"
         android:inputType="datetime"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
