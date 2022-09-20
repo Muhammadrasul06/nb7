@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,9 @@
     app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationMenu"
     tools:context=".ui.helper.Trade2Fragment">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -44,13 +47,14 @@
         android:id="@+id/edPercent"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:paddingStart="10dp"
-        android:hint="Введите процент"
         android:layout_marginStart="24dp"
-        android:background="@drawable/text_input_layout"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:background="@drawable/text_input_layout"
+        android:hint="Введите процент"
+        android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_title" />
 
@@ -88,9 +92,11 @@
         android:background="@drawable/text_input_layout"
         android:hint="Введите телеграм Id "
         android:inputType="number"
+        android:maxLength="10"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edSumma" />
 
@@ -111,6 +117,7 @@
         app:layout_constraintTop_toBottomOf="@id/id_tg" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
@@ -125,5 +132,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edClock" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

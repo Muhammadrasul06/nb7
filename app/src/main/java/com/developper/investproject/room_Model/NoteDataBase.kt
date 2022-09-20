@@ -5,8 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.developper.investproject.room_Model.Note
+import com.developper.investproject.room_Model.Trade.Note_trade
 
-@Database(entities = [Note::class], version = 1)
+@Database(entities = [Note::class,Note_trade::class,], version = 3)
 abstract class NoteDataBase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
 //    abstract fun noteDao_trade():NoteDao_trade

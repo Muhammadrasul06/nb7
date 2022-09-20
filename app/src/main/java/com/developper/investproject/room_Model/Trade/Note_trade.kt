@@ -7,13 +7,13 @@ import kotlinx.parcelize.Parcelize
 
 @Entity(tableName = "trade_table")
 @Parcelize
-
-data class Note_trade (
+data class Note_trade(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Int=0,
+    val percent:Int,
     val summa: Int,
     val telegram_id: String,
     val time: String,
-        ) : Parcelable{
+) : Parcelable {
 
-        }
+}
