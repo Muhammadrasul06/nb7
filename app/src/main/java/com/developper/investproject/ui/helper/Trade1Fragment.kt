@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 class Trade1Fragment : Fragment() {
 
     lateinit var binding: FragmentTrade1Binding
-    lateinit var preferences: SharedPreferences
+//    lateinit var preference: SharedPreferences
 
 
     override fun onCreateView(
@@ -29,37 +29,12 @@ class Trade1Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding= FragmentTrade1Binding.inflate(layoutInflater)
+        binding = FragmentTrade1Binding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//SharedPreferencce boshi
-        binding.btnNext.setOnClickListener {
-            val summa = binding.edSumma.text.toString()
-            val telegram = binding.edTelegram.text.toString()
-            if (summa.isNullOrEmpty()) {
-
-                binding.edSumma.setHintTextColor(
-                    ContextCompat.getColor(
-                        requireActivity(),
-                        R.color.red
-                    )
-                )
-            } else if (telegram.isNullOrEmpty()) {
-                binding.edTelegram.setHintTextColor(
-                    ContextCompat.getColor(
-                        requireActivity(), R.color.red
-                    )
-                )
-            } else {
-                saveUser(summa, telegram)
-                Toast.makeText(requireContext(), "saveUser(100.to, 1234567890.toString())", Toast.LENGTH_SHORT).show()
-            }
-        }
-        //SharedPreference oxriri
-
 //Room boshi
         binding.btnNext.setOnClickListener {
 
@@ -84,13 +59,37 @@ class Trade1Fragment : Fragment() {
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
-    }
-    fun saveUser(summa: String, telegram: String) {
-        val myEdit: SharedPreferences.Editor = preferences.edit()
-        myEdit.putString(Constants.key_Summa, summa)
-        myEdit.putString(Constants.key_Telegram, telegram)
 
-        myEdit.apply()
-        //requireActivity().finish()
+//        //SharedPreferencce boshi
+//        binding.btnNext.setOnClickListener {
+//            val summa = binding.edSumma.text.toString()
+//            val telegram = binding.edTelegram.text.toString()
+//            if (summa.isNullOrEmpty()) {
+//                binding.edSumma.setHintTextColor(
+//                    ContextCompat.getColor(
+//                        requireActivity(), R.color.red
+//                    )
+//                )
+//            } else if (telegram.isNullOrEmpty()) {
+//                binding.edTelegram.setHintTextColor(
+//                    ContextCompat.getColor(
+//                        requireActivity(), R.color.red
+//                    )
+//                )
+//            } else {
+//                saveUser(summa, telegram)
+//            }
+//        }
+//        //SharedPreference oxriri
+
     }
+
+//    fun saveUser(summa: String, telegram: String) {
+//        val myEdit: SharedPreferences.Editor = preference.edit()
+//        myEdit.putString(Constants.key_Summa, summa)
+//        myEdit.putString(Constants.key_Telegram, telegram)
+//
+//        myEdit.apply()
+//        //requireActivity().finish()
+//    }
 }

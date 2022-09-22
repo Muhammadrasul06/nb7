@@ -34,12 +34,10 @@ class Trade2Fragment : Fragment() {
         }
 
         binding.btnSave.setOnClickListener {
-            GlobalScope.launch(Dispatchers.IO) {
-                val percent = binding.edPercent.text.toString().toInt()
-                val summa = binding.edSumma.text.toString().toInt()
+            GlobalScope.launch(Dispatchers.IO) { val summa = binding.edSumma.text.toString().toInt()
                 val tg_id = binding.idTg.text.toString()
                 val time = binding.edClock.text.toString()
-                val noteTrade = Note_trade(0, percent, summa, tg_id, time)
+                val noteTrade = Note_trade(0, summa, tg_id, time)
                 NoteDataBase.DatabaseBuilder.getDatabase(requireContext()).noteDao()
                     .insertTrade(noteTrade)
             }

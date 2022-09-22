@@ -14,7 +14,7 @@ import com.developper.investproject.databinding.FragmentPaymentsBinding
 class PaymentsFragment : Fragment() {
 
     lateinit var binding: FragmentPaymentsBinding
-    lateinit var preferences: SharedPreferences
+//    lateinit var preferences: SharedPreferences
 
 
     override fun onCreateView(
@@ -28,13 +28,12 @@ binding= FragmentPaymentsBinding.inflate(layoutInflater)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        preferences = requireActivity().getSharedPreferences(Constants.baza, Context.MODE_PRIVATE)
-
-        val telegram: String = preferences.getString(Constants.key_Telegram, null).toString()
-        val summa: String = preferences.getString(Constants.key_Summa, null).toString()
-        val phone: String = preferences.getString(Constants.key_Number, null).toString()
-
-        binding.txtAmount.setText(summa)
-        binding.txtTelegramId.setText(telegram)
+//        preferences = requireActivity().getSharedPreferences(Constants.baza, Context.MODE_PRIVATE)
+//
+//        val telegram: String = preferences.getString(Constants.key_Telegram, null).toString()
+//        val summa: String = preferences.getString(Constants.key_Summa, null).toString()
+//
+//        binding.txtAmount.setText(summa)
+//        binding.txtTelegramId.setText(telegram)
     }
 }

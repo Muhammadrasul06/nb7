@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class SignInActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignInBinding
-    lateinit var actionBar: ActionBar
+//    lateinit var actionBar: ActionBar
     lateinit var progressDialog:ProgressDialog
     lateinit var firebaseAuth: FirebaseAuth
     private var email=""
@@ -22,10 +22,10 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        actionBar=supportActionBar!!
-        actionBar.setTitle("Sign Up")
-        actionBar.setDisplayHomeAsUpEnabled(true)
-        actionBar.setDisplayShowHomeEnabled(true)
+//        actionBar=supportActionBar!!
+//        actionBar.setTitle("Sign Up")
+//        actionBar.setDisplayHomeAsUpEnabled(true)
+//        actionBar.setDisplayShowHomeEnabled(true)
 
         progressDialog= ProgressDialog(this)
         progressDialog.setTitle("Please wait")

@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
-    lateinit var actionBar: ActionBar
+//    lateinit var actionBar: ActionBar
     lateinit var progressDialog:ProgressDialog
     lateinit var firebaseAuth: FirebaseAuth
     private var email=""
@@ -27,9 +27,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //actionbar options
-        actionBar=supportActionBar!!
-        actionBar.title="Login"
+//        //actionbar options
+//        actionBar=supportActionBar!!
+//        actionBar.title="Login"
 
         //progress dialog options
         progressDialog= ProgressDialog(this)

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"><b>NB 7</b> test</string>
+    <string name="app_name"><b>NB 7</b> <u>offical</u></string>
     <string name="signing">Sign up</string>
     <string name="hey">Hello</string>
     <string name="expplopping">👋</string>

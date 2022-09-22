@@ -10,7 +10,6 @@ import kotlinx.parcelize.Parcelize
 data class Note_trade(
     @PrimaryKey(autoGenerate = true)
     val id: Int=0,
-    val percent:Int,
     val summa: Int,
     val telegram_id: String,
     val time: String,

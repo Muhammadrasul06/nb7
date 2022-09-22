@@ -18,7 +18,7 @@ lateinit var binding: FragmentProfileBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 binding=FragmentProfileBinding.inflate(layoutInflater)
     return  binding.root
     }
@@ -26,7 +26,7 @@ binding=FragmentProfileBinding.inflate(layoutInflater)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnAddVilla.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
+            findNavController().navigate(R.id.action_destination_profile_to_editProfileFragment)
         }
 
         binding.btnSettings.setOnClickListener {

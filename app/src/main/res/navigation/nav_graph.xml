@@ -49,26 +49,32 @@
             android:id="@+id/action_profileFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
         <action
-            android:id="@+id/action_profileFragment_to_editProfileFragment"
-            app:destination="@id/editProfileFragment" />
-        <action
             android:id="@+id/action_destination_profile_to_profileHelpFragment"
             app:destination="@id/profileHelpFragment" />
+        <action
+            android:id="@+id/action_destination_profile_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.developper.investproject.ui.EditProfile.EditProfileFragment"
         android:label="fragment_edit_profile"
-        tools:layout="@layout/fragment_edit_profile" >
-        <action
-            android:id="@+id/action_editProfileFragment_to_destination_profile"
-            app:destination="@id/destination_profile" />
-    </fragment>
+        tools:layout="@layout/fragment_edit_profile" />
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.developper.investproject.ui.History.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_historyFragment2"
+            app:destination="@id/historyFragment2" />
+        <action
+            android:id="@+id/action_historyFragment_to_historyFragment3"
+            app:destination="@id/historyFragment3" />
+        <action
+            android:id="@+id/action_historyFragment_to_historyFragment4"
+            app:destination="@id/historyFragment4" />
+    </fragment>
     <dialog
         android:id="@+id/publishedFragment"
         android:name="com.developper.investproject.ui.PublishedFragment"
@@ -139,4 +145,19 @@
             android:id="@+id/action_paymentsFragment_to_publishedFragment"
             app:destination="@id/publishedFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/historyFragment2"
+        android:name="com.developper.investproject.ui.History.HistoryFragment2"
+        android:label="fragment_history2"
+        tools:layout="@layout/fragment_history2" />
+    <fragment
+        android:id="@+id/historyFragment3"
+        android:name="com.developper.investproject.ui.History.HistoryFragment3"
+        android:label="fragment_history3"
+        tools:layout="@layout/fragment_history3" />
+    <fragment
+        android:id="@+id/historyFragment4"
+        android:name="com.developper.investproject.ui.History.HistoryFragment4"
+        android:label="fragment_history4"
+        tools:layout="@layout/fragment_history4" />
 </navigation>

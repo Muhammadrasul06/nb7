@@ -46,7 +46,7 @@ class EditProfileFragment : Fragment() {
         binding.edPhone.setText(phone)
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.action_editProfileFragment_to_destination_profile)
+            findNavController().popBackStack()
 //bazadan olish
 
 

@@ -18,7 +18,6 @@ import kotlinx.coroutines.launch
 class HistoryFragment : Fragment() {
 
     lateinit var binding: FragmentHistoryBinding
-    lateinit var adapter: Rec_Adapter
 
 
     override fun onCreateView(
@@ -37,36 +36,6 @@ class HistoryFragment : Fragment() {
             findNavController().popBackStack()
         }
 
-        adapter = Rec_Adapter()
 
-        adapter.onItemClickListener(object : Rec_Adapter.OnItemClickListener {
-            override fun delete(note: Note) {
-                GlobalScope.launch(Dispatchers.IO) {
-                    deleteNote(note)
-                    setList()
-                }
-            }
-
-            override fun update(note: Note) {
-            }
-        })
-
-        GlobalScope.launch(Dispatchers.IO) {
-            setList()
-
-            binding.recyclerview.adapter = adapter
-
-        }
-
-    }
-    fun setList() {
-        val notes =
-            NoteDataBase.DatabaseBuilder.getDatabase(requireContext()).noteDao().getAllNotes()
-        adapter.submitList(notes)
-    }
-
-    fun deleteNote(note: Note) {
-        NoteDataBase.DatabaseBuilder.getDatabase(requireContext()).noteDao().deleteNote(note)
-    }
-
+}
 }
